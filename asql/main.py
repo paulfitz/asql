@@ -89,18 +89,6 @@ class Asql(object):
             self.config['tag'] = tag
             self.log('api set to {} and tagged as {}'.format(url, tag), True)
             changed = True
-        if 'api' not in self.config:
-            tag = '__default__'
-            url = 'http://localhost:5050'
-            self.config['api'] = {
-                tag: {
-                    'tag': tag,
-                    'url': url
-                }
-            }
-            self.config['tag'] = tag
-            self.log('API defaulting to {}'.format(url), True)
-            changed = True
         if changed:
             self.store.save()
         return changed
@@ -119,7 +107,6 @@ class Asql(object):
                                 self.store.save()
                             words = words[1:]
                             break
-            words = ["valuenet"] + words
             self.run_words(words)
         else:
             print("")
@@ -128,6 +115,9 @@ class Asql(object):
         config = self.config
         if 'db' not in self.config:
             print('Please specify database to analyze with --db foo.csv, or --db foo.sqlite, or --db postgres://...')
+            exit(1)
+        if 'api' not in self.config:
+            print('Please specify model api with --docker sqlova|valuenet|irnet, or --api tag http://localhost:5050')
             exit(1)
         if 'cached' not in self.config:
             print('Database not cached, please retry')
@@ -246,7 +236,6 @@ class Asql(object):
                     container.remove()
                 except:
                     pass
-        print("PORTS", ports)
         for port in range(5050, 5100):
             if port not in ports:
                 break

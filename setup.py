@@ -4,7 +4,7 @@ import sys
 from setuptools import setup
 
 install_requires = [
-    "catsql >= 0.4.10",
+    "catsql >= 0.4.12",
     "csvkit >= 1.0.5",
     "daff >= 1.3.14",
     "docker >= 4.3.0",
@@ -42,5 +42,7 @@ setup(name="asql",
           'nose'
       ],
       test_suite="nose.collector",
-      url="https://github.com/paulfitz/asql"
+      url="https://github.com/paulfitz/asql",
+      long_description=read('README.md'),
+      long_description_content_type='text/markdown',
 )
