@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-import sys
+import os
 from setuptools import setup
+import sys
 
 install_requires = [
     "catsql >= 0.4.12",
@@ -16,6 +17,10 @@ install_requires = [
     "SQLAlchemy >= 1.0.11",
     "sqlparse >= 0.3.1",
 ]
+
+def read(fname):
+    with open(os.path.join(os.path.dirname(__file__), fname)) as f:
+        return f.read()
 
 setup(name="asql",
       version="0.1.2",
