@@ -18,7 +18,7 @@ install_requires = [
 ]
 
 setup(name="asql",
-      version="0.1.1",
+      version="0.1.2",
       author="Paul Fitzpatrick",
       author_email="paulfitz@alum.mit.edu",
       description="Query a database in natural language",
