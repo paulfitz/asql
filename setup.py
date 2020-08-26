@@ -5,7 +5,7 @@ from setuptools import setup
 import sys
 
 install_requires = [
-    "catsql >= 0.4.12",
+    "catsql >= 0.4.13",
     "csvkit >= 1.0.5",
     "daff >= 1.3.14",
     "docker >= 4.3.0",
@@ -23,7 +23,7 @@ def read(fname):
         return f.read()
 
 setup(name="asql",
-      version="0.1.2",
+      version="0.1.3",
       author="Paul Fitzpatrick",
       author_email="paulfitz@alum.mit.edu",
       description="Query a database in natural language",
