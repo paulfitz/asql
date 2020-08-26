@@ -4,6 +4,8 @@ Query a database in natural language.  Uses docker images from
 https://github.com/paulfitz/mlsql - make sure Docker RAM limits
 are not too restrictive (should be above 3GB).
  
+ <img width="1225" alt="Example" src="https://user-images.githubusercontent.com/118367/91365039-2b107700-e7ce-11ea-9b61-f33fa6a66afb.png">
+ 
 ## Installation
 
   * `pip install asql` to work with Sqlite or CSV files.
